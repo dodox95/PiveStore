@@ -26,12 +26,13 @@
 
             <!-- Navbar links & Search bar on large screens -->
             <div class="hidden lg:flex items-center space-x-4">
-
-                <div class="relative group">
-                    <button class="px-3 py-2 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none">
+                <div class="relative inline-block group">
+                    <!-- Button -->
+                    <button class="px-3 py-2 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none group-hover:bg-gray-700">
                         All Categories <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="absolute left-0 mt-2 space-y-2 bg-gray-800 rounded-md opacity-0 group-hover:opacity-100 transition">
+                    <!-- Dropdown -->
+                    <div class="absolute left-0 mt-2 w-64 space-y-2 bg-gray-800 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out pointer-events-none group-hover:pointer-events-auto">
                         <a href="#" class="block px-4 py-2 hover:bg-gray-600">All Products</a>
                         <a href="#" class="block px-4 py-2 hover:bg-gray-600">Men's Clothing</a>
                         <a href="#" class="block px-4 py-2 hover:bg-gray-600">Women's Clothing</a>
@@ -41,6 +42,11 @@
                         <a href="#" class="block px-4 py-2 hover:bg-gray-600">Activewear</a>
                     </div>
                 </div>
+                
+                
+                
+                
+                
 
                 <div class="relative mx-8">
                     <input type="text" placeholder="Search..." class="px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:bg-white focus:text-black transition">
@@ -157,24 +163,17 @@
         <a href="/cart" class="block w-full text-center py-3 px-6 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Go to cart</a>
     </div>
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
 
 <script>
- let justOpenedCart = false;
-
+let justOpenedCart = false;
 const cartSidebar = document.getElementById('cart-sidebar');
 const closeCartSidebarBtn = document.getElementById('close-cart-sidebar');
-
 const cartIcons = document.querySelectorAll('.fa-shopping-cart');
 const cartText = document.getElementById('cart-text');
-
 cartIcons.forEach(cartIcon => {
     cartIcon.addEventListener('click', () => {
         cartSidebar.style.display = 'block';
@@ -216,9 +215,6 @@ document.getElementById('categories-toggle').addEventListener('click', function 
     categoriesMenu.classList.toggle('hidden');
 });
 
-  </script>
-  
-
+</script>
 </body>
-
 </html>

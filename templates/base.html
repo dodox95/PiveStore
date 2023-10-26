@@ -56,6 +56,28 @@
     });
 </script>
 
+<script>
+    const categoryDropdownButton = document.querySelector('.category-dropdown-button');
+const categoryDropdownContent = document.querySelector('.category-dropdown-content');
+
+categoryDropdownButton.addEventListener('mouseover', function () {
+    categoryDropdownContent.classList.remove('hidden');
+});
+
+categoryDropdownButton.addEventListener('mouseout', function () {
+    categoryDropdownContent.classList.add('hidden');
+});
+
+categoryDropdownContent.addEventListener('mouseover', function () {
+    categoryDropdownContent.classList.remove('hidden');
+});
+
+categoryDropdownContent.addEventListener('mouseout', function () {
+    categoryDropdownContent.classList.add('hidden');
+});
+
+</script>
+
 
 </body>
 </html>
@@ -137,8 +159,4 @@
       margin: 0;
     }
   }
-</style>
-
-<style>
-    
 </style>
