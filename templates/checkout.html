@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout with TailwindCSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.9/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto mt-10 p-5">
+        <h2 class="text-2xl font-bold mb-5">Responsive Checkout Form</h2>
+        <div class="bg-white p-5 rounded-lg shadow-md flex flex-wrap md:flex-nowrap">
+            <!-- Left side - Form -->
+            <div class="w-full md:w-3/4 p-3">
+                <div class="bg-gray-50 p-5 rounded-lg">
+                    <form action="/action_page.php" class="space-y-5">
+
+                        <!-- Billing Address -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Billing Address</h3>
+                            <div class="space-y-4">
+                                <input type="text" placeholder="Full Name" class="w-full p-3 border rounded">
+                                <input type="text" placeholder="Email" class="w-full p-3 border rounded">
+                                <input type="text" placeholder="Address" class="w-full p-3 border rounded">
+                                <input type="text" placeholder="City" class="w-full p-3 border rounded">
+                                <div class="flex space-x-4">
+                                    <input type="text" placeholder="State" class="w-1/2 p-3 border rounded">
+                                    <input type="text" placeholder="Zip" class="w-1/2 p-3 border rounded">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Info -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold mb-4">Payment Method</h3>
+                            <div class="flex space-x-3 items-center">
+                                <input type="radio" name="paymentMethod" value="paypal">
+                                <label for="paypal"><img src="path_to_paypal_image" alt="PayPal" width="50"></label>
+                                <input type="radio" name="paymentMethod" value="stripe">
+                                <label for="stripe"><img src="path_to_stripe_image" alt="Stripe" width="50"></label>
+                                <input type="radio" name="paymentMethod" value="crypto">
+                                <label for="crypto"><img src="path_to_crypto_image" alt="Cryptocurrencies" width="50"></label>
+                            </div>
+
+                            <div class="flex space-x-3 items-center">
+                                <input type="radio" name="paymentMethod" value="gpay">
+                                <label for="gpay"><img src="path_to_gpay_image" alt="GPay" width="50"></label>
+                                <input type="radio" name="paymentMethod" value="visa">
+                                <label for="visa"><img src="path_to_visa_image" alt="Visa" width="50"></label>
+                                <input type="radio" name="paymentMethod" value="mastercard">
+                                <label for="mastercard"><img src="path_to_mastercard_image" alt="MasterCard" width="50"></label>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <input type="checkbox" id="sameAddress" name="sameAddress" class="rounded">
+                            <label for="sameAddress">Shipping address same as billing</label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-green-500 text-white p-3 rounded hover:bg-green-600">Submit and pay</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right side - Cart -->
+            <div class="w-full md:w-1/4 p-3">
+                <div class="bg-gray-50 p-5 rounded-lg">
+                    <h4 class="flex items-center justify-between">
+                        Cart 
+                        <span><i class="fas fa-shopping-cart"></i> <b>4</b></span>
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <a href="#">Product 1</a>
+                            <span>$15</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#">Product 2</a>
+                            <span>$5</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#">Product 3</a>
+                            <span>$8</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#">Product 4</a>
+                            <span>$2</span>
+                        </div>
+                        <hr class="my-3">
+                        <div class="flex justify-between font-bold">
+                            Total
+                            <span>$30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>
+
+
+
+{% endblock %}

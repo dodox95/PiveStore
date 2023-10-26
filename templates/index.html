@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mx-auto py-20">
+    {% include "bannersCards.html" %}
+    {% include "productsCard.html" %}
+    {% include "carousel.html" %}
+    {% include 'categoriesBanners.html' %}
+    {% include 'LightningDealsSection.html' %} 
+    {% include 'Newsletter.html' %}     <!-- Dodaj tutaj więcej zawartości dla strony głównej -->
+  </div>
+{% endblock %}
