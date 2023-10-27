@@ -20,25 +20,33 @@
                 </div>
 
                 <div class="mt-8">
-                    <form>
+                    <form method="post" action="{% url 'account_signup' %}">
+                        {% csrf_token %}
+
                         <div>
-                            <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email Address</label>
-                            <input type="email" name="email" id="email" placeholder="example@example.com" class="block w-full ..." />
+                            <label for="username" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Username</label>
+                            {{ form.username }}
+                            {{ form.username.errors }}
                         </div>
                         
+
+                        <div>
+                            <label for="{{ form.email.id_for_label }}" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email Address</label>
+                            {{ form.email }}
+                            {{ form.email.errors }}
+                        </div>
+                        
+
                         <div class="mt-6">
-                            <label for="username" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Username</label>
-                            <input type="text" name="username" id="username" placeholder="Username" class="block w-full ..." />
+                            <label for="{{ form.password1.id_for_label }}" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Password</label>
+                            {{ form.password1 }}
+                            {{ form.password1.errors }}
                         </div>
 
                         <div class="mt-6">
-                            <label for="password" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Password</label>
-                            <input type="password" name="password" id="password" placeholder="Your Password" class="block w-full ..." />
-                        </div>
-
-                        <div class="mt-6">
-                            <label for="confirm-password" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Confirm Password</label>
-                            <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Your Password" class="block w-full ..." />
+                            <label for="{{ form.password2.id_for_label }}" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Confirm Password</label>
+                            {{ form.password2 }}
+                            {{ form.password2.errors }}
                         </div>
 
                         <div class="mt-6">
@@ -49,7 +57,7 @@
                         </div>
                     </form>
 
-                    <p class="mt-6 text-sm text-center text-gray-400">Already have an account? <a href="/login" class="text-blue-500 focus:outline-none focus:underline hover:underline">Sign in</a>.</p>
+                    <p class="mt-6 text-sm text-center text-gray-400">Already have an account? <a href="/accounts/login/" class="text-blue-500 focus:outline-none focus:underline hover:underline">Sign in</a>.</p>
                 </div>
             </div>
         </div>

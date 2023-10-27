@@ -4,7 +4,8 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-^c6x62=&l1ytwtvz_*h7s@)aa@9gmjsa^33@w)pr=qc$gxf+#x"
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -16,6 +17,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "accounts",
     "products",
+    "post_office",
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -74,3 +76,27 @@ AUTHENTICATION_BACKENDS = ("allauth.account.auth_backends.AuthenticationBackend"
 ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_UNIQUE_EMAIL = True
+
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+
+# Email settings
+EMAIL_BACKEND = "post_office.EmailBackend"
+POST_OFFICE = {
+    "BACKENDS": {
+        "default": "django.core.mail.backends.smtp.EmailBackend",
+    },
+    "DEFAULT_PRIORITY": "now",
+}
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "office.travilabs@gmail.com"
+EMAIL_HOST_PASSWORD = "ajykunuyiloxpfcu "
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+#  ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+# ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "/confirm-email/"
+SITE_ID = 1

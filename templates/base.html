@@ -79,6 +79,16 @@ categoryDropdownContent.addEventListener('mouseout', function () {
 </script>
 
 
+<script>
+    const messages = document.getElementById("messages");
+    if (messages.contains(document.querySelector(".success"))) {
+        setTimeout(() => {
+            window.location.href = "/"; // Redirect to homepage after 3 seconds
+        }, 3000);
+    }
+</script>
+
+
 </body>
 </html>
 
@@ -159,4 +169,24 @@ categoryDropdownContent.addEventListener('mouseout', function () {
       margin: 0;
     }
   }
+
+
+  .error-message {
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid #f5c6cb; /* Red border */
+    color: #721c24; /* Dark red text */
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.error-message i {
+    font-style: normal; /* To neutralize the italic style if using an <i> tag */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
 </style>
+
