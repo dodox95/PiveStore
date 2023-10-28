@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = "django-insecure-^c6x62=&l1ytwtvz_*h7s@)aa@9gmjsa^33@w)pr=qc$gxf+#x"
+SECRET_KEY = ""
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
@@ -93,9 +93,7 @@ POST_OFFICE = {
 }
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "office.travilabs@gmail.com"
-EMAIL_HOST_PASSWORD = "ajykunuyiloxpfcu "
+EMAIL_USE_TLS = True"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 #  ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 # ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "/confirm-email/"
